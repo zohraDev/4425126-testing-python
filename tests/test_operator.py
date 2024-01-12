@@ -1,8 +1,4 @@
-import sys
-
 from calculate.controller import Operators
-
-sys.path.append("..")
 
 
 def test_simple_addition():
@@ -37,14 +33,18 @@ def test_simple_multiplication():
     op_obj = Operators()
     expression = "30*2"
     expect_result = 60
-    assert op_obj.multiplication(expression) == expect_result, "Test simple multiplication"
+    assert (
+        op_obj.multiplication(expression) == expect_result
+    ), "Test simple multiplication"
 
 
 def test_multiple_multiplication():
     op_obj = Operators()
     expression = "3*45*10"
     expect_result = 1350
-    assert op_obj.multiplication(expression) == expect_result, "Test multiple multiplication"
+    assert (
+        op_obj.multiplication(expression) == expect_result
+    ), "Test multiple multiplication"
 
 
 def test_simple_division():
@@ -73,5 +73,3 @@ def test_division_zero():
     expression = "40/0"
     expect_result = None
     assert op_obj.division(expression) == expect_result, "Test multiple division"
-
-
